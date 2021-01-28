@@ -30,15 +30,13 @@ const theme = db.whateverTheme;
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </ThemeProvider>
   )
 }
